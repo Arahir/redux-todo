@@ -1,6 +1,7 @@
 import {expect} from 'chai';
 import {createStore} from 'redux';
 import reducers from '../src/reducers';
+import todoActions from '../src/actions/todo-actions';
 
 describe('todo reducers', () => {
   let store;
@@ -22,19 +23,19 @@ describe('todo reducers', () => {
   })
   describe('add todo', () => {
     it('should add a task when called with ADD_TODO', () => {
-      store.dispatch({type: 'ADD_TODO'});
+      store.dispatch(todoActions.add('coding'));
       expect(store.getState().todo.length).to.equal(1);
     });
     it('should have the correct text', () => {
-      store.dispatch({type: 'ADD_TODO', text: 'coding'});
+      store.dispatch(todoActions.add('coding'));
       expect(store.getState().todo[0].text).to.equal('coding');
     });
     it('should increment id', () => {
-      store.dispatch({type: 'ADD_TODO', text: 'coding'});
+      store.dispatch(todoActions.add('coding'));
       expect(store.getState().todo[0].id).to.equal(0);
     });
     it('should not be completed', () => {
-      store.dispatch({type: 'ADD_TODO', text: 'coding'});
+      store.dispatch(todoActions.add('coding'));
       expect(store.getState().todo[0].completed).to.not.be.true;
     });
   })
