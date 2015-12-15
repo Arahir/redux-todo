@@ -1,1 +1,5 @@
-document.body.innerText = 'hello World';
+const render = () => {
+  document.body.innerText = 'Hello World!';
+}
+
+render();
