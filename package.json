@@ -1,0 +1,43 @@
+{
+  "name": "redux-todo",
+  "version": "1.0.0",
+  "description": "a simple todo with redux",
+  "main": "index.js",
+  "dependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "^3.4.1",
+    "redux": "^3.0.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "mocha": "^2.3.4",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "scripts": {
+    "start": "babel-node index.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
+    "test:watch": "npm run test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arahir/redux-todo.git"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "arahir",
+  "bugs": {
+    "url": "https://github.com/Arahir/redux-todo/issues"
+  },
+  "homepage": "https://github.com/Arahir/redux-todo#readme",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
