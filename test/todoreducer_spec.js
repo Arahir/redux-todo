@@ -31,7 +31,11 @@ describe('todo reducers', () => {
     });
     it('should increment id', () => {
       store.dispatch({type: 'ADD_TODO', text: 'coding'});
-      expect(store.getState().todo[0].id).to.equal(1);
+      expect(store.getState().todo[0].id).to.equal(0);
+    });
+    it('should not be completed', () => {
+      store.dispatch({type: 'ADD_TODO', text: 'coding'});
+      expect(store.getState().todo[0].completed).to.not.be.true;
     });
   })
 });
